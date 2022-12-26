@@ -1,1 +1,1 @@
-# one.dart
+An opinionated widgets & utilities library for flutter.
