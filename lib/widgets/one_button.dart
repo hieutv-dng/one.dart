@@ -111,7 +111,7 @@ class _OneElevatedButton extends OneButton {
 
     return ElevatedButton(
       style: theme.textButtonTheme.style?.copyWith(
-        padding: MaterialStateProperty.all(padding),
+        padding: MaterialStateProperty.all(padding ?? theme.spacing.edgeInsets),
       ),
       onPressed: onTap,
       onLongPress: onLongPress,
