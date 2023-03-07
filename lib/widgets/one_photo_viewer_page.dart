@@ -3,8 +3,8 @@ import 'package:one/widgets/one_network_image.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
-class PhotoViewerPage extends StatefulWidget {
-  const PhotoViewerPage({
+class OnePhotoViewerPage extends StatefulWidget {
+  const OnePhotoViewerPage({
     required this.items,
     this.initialIndex = 0,
     this.loadingBuilder,
@@ -17,11 +17,11 @@ class PhotoViewerPage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _PhotoViewerPageState();
+    return _OnePhotoViewerPageState();
   }
 }
 
-class _PhotoViewerPageState extends State<PhotoViewerPage> {
+class _OnePhotoViewerPageState extends State<OnePhotoViewerPage> {
   late final PageController _pageController;
   final minScale = PhotoViewComputedScale.contained;
   final maxScale = PhotoViewComputedScale.covered * 8;
