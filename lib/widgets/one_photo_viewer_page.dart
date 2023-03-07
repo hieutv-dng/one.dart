@@ -39,7 +39,7 @@ class _OnePhotoViewerPageState extends State<OnePhotoViewerPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          icon: const Icon(Icons.close),
+          icon: const Icon(Icons.close, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
