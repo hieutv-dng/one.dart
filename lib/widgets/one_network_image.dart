@@ -37,7 +37,7 @@ class OneNetworkImage extends StatelessWidget {
       width: _width,
       imageBuilder: imageBuilder,
       placeholder: (context, url) => OneShimmer(child: Container(color: Colors.white)),
-      errorWidget: (context, url, error) => const LacoEmptyImage(),
+      errorWidget: errorWidget ?? (context, url, error) => const LacoEmptyImage(),
     );
   }
 }
