@@ -9,6 +9,7 @@ class OneNetworkImage extends StatelessWidget {
     BoxFit? fit,
     double? height,
     double? width,
+    this.placeholder,
     this.imageBuilder,
     this.errorWidget,
     super.key,
@@ -21,6 +22,7 @@ class OneNetworkImage extends StatelessWidget {
   final BoxFit? _fit;
   final double? _height;
   final double? _width;
+  final Widget Function(BuildContext context, String url)? placeholder;
   final Widget Function(BuildContext context, ImageProvider<Object> child)? imageBuilder;
   final Widget Function(BuildContext context, String url, dynamic error)? errorWidget;
 
@@ -36,7 +38,7 @@ class OneNetworkImage extends StatelessWidget {
       height: _height,
       width: _width,
       imageBuilder: imageBuilder,
-      placeholder: (context, url) => OneShimmer(child: Container(color: Colors.white)),
+      placeholder: placeholder ?? (context, url) => OneShimmer(child: Container(color: Colors.white)),
       errorWidget: errorWidget ?? (context, url, error) => const LacoEmptyImage(),
     );
   }
