@@ -45,5 +45,6 @@ export 'widgets/page_route/one_page.dart';
 export 'widgets/page_route/slide_page_route.dart';
 export 'widgets/popup_menu/one_popup_menu.dart';
 export 'widgets/popup_menu/one_popup_menu_button.dart';
+export 'widgets/sliver/one_persistent_header_delegate.dart';
 export 'widgets/spacer.dart';
 export 'widgets/unfocus.dart';
