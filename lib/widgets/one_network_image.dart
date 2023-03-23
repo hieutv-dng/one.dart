@@ -30,7 +30,7 @@ class OneNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (!_validURL) return const LacoEmptyImage();
+    if (!_validURL) return const OneEmptyImage();
 
     return CachedNetworkImage(
       imageUrl: _imageUrl!,
@@ -39,20 +39,19 @@ class OneNetworkImage extends StatelessWidget {
       width: _width,
       imageBuilder: imageBuilder,
       placeholder: placeholder ?? (context, url) => OneShimmer(child: Container(color: Colors.white)),
-      errorWidget: errorWidget ?? (context, url, error) => const LacoEmptyImage(),
+      errorWidget: errorWidget ?? (context, url, error) => const OneEmptyImage(),
     );
   }
 }
 
-class LacoEmptyImage extends StatelessWidget {
-  const LacoEmptyImage({
-    Key? key,
-  }) : super(key: key);
+class OneEmptyImage extends StatelessWidget {
+  const OneEmptyImage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey.shade100,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [

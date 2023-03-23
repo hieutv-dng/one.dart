@@ -148,7 +148,7 @@ class _OneOutlinedButton extends OneButton {
 
     return OutlinedButton(
       style: theme.textButtonTheme.style?.copyWith(
-        padding: MaterialStateProperty.all(padding),
+        padding: MaterialStateProperty.all(padding ?? theme.spacing.edgeInsets),
       ),
       onPressed: onTap,
       onLongPress: onLongPress,
