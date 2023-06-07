@@ -6,7 +6,6 @@ import 'package:flutter/widgets.dart';
 class BasicScrollBehavior extends ScrollBehavior {
   const BasicScrollBehavior();
 
-  @override
   Widget buildViewportChrome(
     BuildContext context,
     Widget child,
