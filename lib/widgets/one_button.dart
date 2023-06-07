@@ -9,6 +9,7 @@ abstract class OneButton extends StatelessWidget {
     required VoidCallback? onTap,
     Widget? icon,
     Widget? label,
+    Widget? iconEnd,
     VoidCallback? onLongPress,
     EdgeInsetsGeometry? padding,
   }) = _OneTextButton;
@@ -18,6 +19,7 @@ abstract class OneButton extends StatelessWidget {
     required VoidCallback? onTap,
     Widget? icon,
     Widget? label,
+    Widget? iconEnd,
     VoidCallback? onLongPress,
     EdgeInsetsGeometry? padding,
   }) = _OneElevatedButton;
@@ -27,6 +29,7 @@ abstract class OneButton extends StatelessWidget {
     required VoidCallback? onTap,
     Widget? icon,
     Widget? label,
+    Widget? iconEnd,
     VoidCallback? onLongPress,
     EdgeInsetsGeometry? padding,
   }) = _OneOutlinedButton;
@@ -36,6 +39,7 @@ abstract class OneButton extends StatelessWidget {
     required VoidCallback? onTap,
     Widget? icon,
     Widget? label,
+    Widget? iconEnd,
     VoidCallback? onLongPress,
     EdgeInsetsGeometry? padding,
   }) = _OneTransparentButton;
@@ -46,6 +50,7 @@ abstract class OneButton extends StatelessWidget {
     required VoidCallback? onTap,
     Widget? icon,
     Widget? label,
+    Widget? iconEnd,
     VoidCallback? onLongPress,
     EdgeInsetsGeometry? padding,
     Color? foregroundColor,
@@ -58,12 +63,14 @@ class _OneTextButton extends OneButton {
     required this.onTap,
     this.icon,
     this.label,
+    this.iconEnd,
     this.onLongPress,
     this.padding,
   });
 
   final Widget? icon;
   final Widget? label;
+  final Widget? iconEnd;
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
   final EdgeInsetsGeometry? padding;
@@ -84,6 +91,8 @@ class _OneTextButton extends OneButton {
           if (icon != null) icon!,
           if (icon != null && label != null) HorizontalSpacer.small,
           if (label != null) label!,
+          if (iconEnd != null && label != null) HorizontalSpacer.small,
+          if (iconEnd != null) iconEnd!,
         ],
       ),
     );
@@ -95,12 +104,14 @@ class _OneElevatedButton extends OneButton {
     required this.onTap,
     this.icon,
     this.label,
+    this.iconEnd,
     this.onLongPress,
     this.padding,
   });
 
   final Widget? icon;
   final Widget? label;
+  final Widget? iconEnd;
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
   final EdgeInsetsGeometry? padding;
@@ -121,6 +132,8 @@ class _OneElevatedButton extends OneButton {
           if (icon != null) icon!,
           if (icon != null && label != null) HorizontalSpacer.small,
           if (label != null) label!,
+          if (iconEnd != null && label != null) HorizontalSpacer.small,
+          if (iconEnd != null) iconEnd!,
         ],
       ),
     );
@@ -132,12 +145,14 @@ class _OneOutlinedButton extends OneButton {
     required this.onTap,
     this.icon,
     this.label,
+    this.iconEnd,
     this.onLongPress,
     this.padding,
   });
 
   final Widget? icon;
   final Widget? label;
+  final Widget? iconEnd;
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
   final EdgeInsetsGeometry? padding;
@@ -158,6 +173,8 @@ class _OneOutlinedButton extends OneButton {
           if (icon != null) icon!,
           if (icon != null && label != null) HorizontalSpacer.small,
           if (label != null) label!,
+          if (iconEnd != null && label != null) HorizontalSpacer.small,
+          if (iconEnd != null) iconEnd!,
         ],
       ),
     );
@@ -169,12 +186,14 @@ class _OneTransparentButton extends OneButton {
     required this.onTap,
     this.icon,
     this.label,
+    this.iconEnd,
     this.onLongPress,
     this.padding,
   });
 
   final Widget? icon;
   final Widget? label;
+  final Widget? iconEnd;
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
   final EdgeInsetsGeometry? padding;
@@ -207,6 +226,8 @@ class _OneTransparentButton extends OneButton {
           if (icon != null) icon!,
           if (icon != null && label != null) HorizontalSpacer.small,
           if (label != null) label!,
+          if (iconEnd != null && label != null) HorizontalSpacer.small,
+          if (iconEnd != null) iconEnd!,
         ],
       ),
     );
@@ -218,6 +239,7 @@ class _OneCardButton extends OneButton {
     required this.onTap,
     this.icon,
     this.label,
+    this.iconEnd,
     this.onLongPress,
     this.padding,
     this.foregroundColor,
@@ -226,6 +248,7 @@ class _OneCardButton extends OneButton {
 
   final Widget? icon;
   final Widget? label;
+  final Widget? iconEnd;
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
   final EdgeInsetsGeometry? padding;
@@ -263,6 +286,8 @@ class _OneCardButton extends OneButton {
           if (icon != null) icon!,
           if (icon != null && label != null) HorizontalSpacer.small,
           if (label != null) label!,
+          if (iconEnd != null && label != null) HorizontalSpacer.small,
+          if (iconEnd != null) iconEnd!,
         ],
       ),
     );
