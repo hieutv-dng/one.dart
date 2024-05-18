@@ -46,7 +46,12 @@ class _OnePhotoViewerPageState extends State<OnePhotoViewerPage> {
         ),
         actions: [
           if (widget.onTapMore != null)
-            IconButton(onPressed: () => widget.onTapMore!(_pageController.page?.toInt() ?? widget.initialIndex), icon: const Icon(Icons.more_vert)),
+            IconButton(
+              onPressed: () => widget.onTapMore!(
+                _pageController.page?.toInt() ?? widget.initialIndex,
+              ),
+              icon: const Icon(Icons.more_vert),
+            ),
         ],
       ),
       body: PhotoViewGallery.builder(
@@ -78,7 +83,9 @@ class _OnePhotoViewerPageState extends State<OnePhotoViewerPage> {
       initialScale: PhotoViewComputedScale.contained,
       minScale: minScale,
       maxScale: maxScale,
-      heroAttributes: item?.isNotEmpty ?? false ? PhotoViewHeroAttributes(tag: item!) : null,
+      heroAttributes: item?.isNotEmpty ?? false
+          ? PhotoViewHeroAttributes(tag: item!)
+          : null,
     );
   }
 }

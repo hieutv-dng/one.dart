@@ -63,34 +63,44 @@ class _BasicPreferences extends Preferences {
   final String? _prefix;
 
   @override
-  int getInt(String key, int defaultValue) => _sharedPreferences.getInt(_buildKey(key)) ?? defaultValue;
+  int getInt(String key, int defaultValue) =>
+      _sharedPreferences.getInt(_buildKey(key)) ?? defaultValue;
 
   @override
-  double getDouble(String key, double defaultValue) => _sharedPreferences.getDouble(_buildKey(key)) ?? defaultValue;
+  double getDouble(String key, double defaultValue) =>
+      _sharedPreferences.getDouble(_buildKey(key)) ?? defaultValue;
 
   @override
-  bool getBool(String key, bool defaultValue) => _sharedPreferences.getBool(_buildKey(key)) ?? defaultValue;
+  bool getBool(String key, bool defaultValue) =>
+      _sharedPreferences.getBool(_buildKey(key)) ?? defaultValue;
 
   @override
-  String getString(String key, String defaultValue) => _sharedPreferences.getString(_buildKey(key)) ?? defaultValue;
+  String getString(String key, String defaultValue) =>
+      _sharedPreferences.getString(_buildKey(key)) ?? defaultValue;
 
   @override
-  List<String> getStringList(String key, List<String> defaultValue) => _sharedPreferences.getStringList(_buildKey(key)) ?? defaultValue;
+  List<String> getStringList(String key, List<String> defaultValue) =>
+      _sharedPreferences.getStringList(_buildKey(key)) ?? defaultValue;
 
   @override
-  void setInt(String key, int value) => _sharedPreferences.setInt(_buildKey(key), value);
+  void setInt(String key, int value) =>
+      _sharedPreferences.setInt(_buildKey(key), value);
 
   @override
-  void setDouble(String key, double value) => _sharedPreferences.setDouble(_buildKey(key), value);
+  void setDouble(String key, double value) =>
+      _sharedPreferences.setDouble(_buildKey(key), value);
 
   @override
-  void setBool(String key, bool value) => _sharedPreferences.setBool(_buildKey(key), value);
+  void setBool(String key, bool value) =>
+      _sharedPreferences.setBool(_buildKey(key), value);
 
   @override
-  void setString(String key, String value) => _sharedPreferences.setString(_buildKey(key), value);
+  void setString(String key, String value) =>
+      _sharedPreferences.setString(_buildKey(key), value);
 
   @override
-  void setStringList(String key, List<String> value) => _sharedPreferences.setStringList(_buildKey(key), value);
+  void setStringList(String key, List<String> value) =>
+      _sharedPreferences.setStringList(_buildKey(key), value);
 }
 
 class _EncryptedPreferences extends Preferences with LoggerMixin {
@@ -121,7 +131,9 @@ class _EncryptedPreferences extends Preferences with LoggerMixin {
   double getDouble(String key, double defaultValue) {
     final value = _getAndDecryptValue(key);
 
-    return value != null ? double.tryParse(value) ?? defaultValue : defaultValue;
+    return value != null
+        ? double.tryParse(value) ?? defaultValue
+        : defaultValue;
   }
 
   @override
@@ -132,10 +144,12 @@ class _EncryptedPreferences extends Preferences with LoggerMixin {
   }
 
   @override
-  String getString(String key, String defaultValue) => _getAndDecryptValue(key) ?? defaultValue;
+  String getString(String key, String defaultValue) =>
+      _getAndDecryptValue(key) ?? defaultValue;
 
   @override
-  List<String> getStringList(String key, List<String> defaultValue) => throw UnimplementedError();
+  List<String> getStringList(String key, List<String> defaultValue) =>
+      throw UnimplementedError();
 
   @override
   void setInt(String key, int value) => _setAndEncryptValue(key, value);
@@ -156,7 +170,8 @@ class _EncryptedPreferences extends Preferences with LoggerMixin {
   }
 
   @override
-  void setStringList(String key, List<String> value) => throw UnimplementedError();
+  void setStringList(String key, List<String> value) =>
+      throw UnimplementedError();
 
   @override
   String _buildKey(String unencryptedKey) {

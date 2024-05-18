@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:one/one.dart';
@@ -28,7 +26,8 @@ class AnimatedNumber extends StatefulWidget {
   State<AnimatedNumber> createState() => _AnimatedNumberState();
 }
 
-class _AnimatedNumberState extends State<AnimatedNumber> with TickerProviderStateMixin<AnimatedNumber> {
+class _AnimatedNumberState extends State<AnimatedNumber>
+    with TickerProviderStateMixin<AnimatedNumber> {
   AnimationController? _controller;
   late Animation<Offset> _oldSlideAnimation;
   late Animation<Offset> _newSlideAnimation;
@@ -57,11 +56,17 @@ class _AnimatedNumberState extends State<AnimatedNumber> with TickerProviderStat
       vsync: this,
     );
 
-    _oldSlideAnimation = Tween(begin: Offset.zero, end: const Offset(0, 1)).chain(CurveTween(curve: Curves.easeInOut)).animate(_controller!);
+    _oldSlideAnimation = Tween(begin: Offset.zero, end: const Offset(0, 1))
+        .chain(CurveTween(curve: Curves.easeInOut))
+        .animate(_controller!);
 
-    _newSlideAnimation = Tween(begin: const Offset(0, -1), end: Offset.zero).chain(CurveTween(curve: Curves.easeInOut)).animate(_controller!);
+    _newSlideAnimation = Tween(begin: const Offset(0, -1), end: Offset.zero)
+        .chain(CurveTween(curve: Curves.easeInOut))
+        .animate(_controller!);
 
-    _opacityAnimation = Tween<double>(begin: 1, end: 0).chain(CurveTween(curve: Curves.easeOut)).animate(_controller!);
+    _opacityAnimation = Tween<double>(begin: 1, end: 0)
+        .chain(CurveTween(curve: Curves.easeOut))
+        .animate(_controller!);
   }
 
   @override
@@ -145,18 +150,22 @@ class _AnimatedNumberState extends State<AnimatedNumber> with TickerProviderStat
                 fit: StackFit.passthrough,
                 children: [
                   FractionalTranslation(
-                    translation: _oldNumber > widget.number ? _newSlideAnimation.value : -_newSlideAnimation.value,
+                    translation: _oldNumber > widget.number
+                        ? _newSlideAnimation.value
+                        : -_newSlideAnimation.value,
                     child: Text(newText, style: style),
                   ),
                   Opacity(
                     opacity: _opacityAnimation.value,
                     child: FractionalTranslation(
-                      translation: _oldNumber > widget.number ? _oldSlideAnimation.value : -_oldSlideAnimation.value,
+                      translation: _oldNumber > widget.number
+                          ? _oldSlideAnimation.value
+                          : -_oldSlideAnimation.value,
                       child: Text(oldText, style: style),
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

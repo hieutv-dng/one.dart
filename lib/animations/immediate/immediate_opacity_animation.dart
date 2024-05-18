@@ -14,10 +14,12 @@ class ImmediateOpacityAnimation extends ImmediateImplicitAnimation<double> {
   });
 
   @override
-  ImmediateImplictAnimationState<ImmediateOpacityAnimation, double> createState() => _ImmediateOpacityAnimationState();
+  ImmediateImplictAnimationState<ImmediateOpacityAnimation, double>
+      createState() => _ImmediateOpacityAnimationState();
 }
 
-class _ImmediateOpacityAnimationState extends ImmediateImplictAnimationState<ImmediateOpacityAnimation, double> {
+class _ImmediateOpacityAnimationState
+    extends ImmediateImplictAnimationState<ImmediateOpacityAnimation, double> {
   @override
   ImplicitlyAnimatedWidget buildAnimated(Widget child, double value) {
     return AnimatedOpacity(

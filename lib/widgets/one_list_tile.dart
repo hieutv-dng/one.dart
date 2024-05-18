@@ -41,7 +41,7 @@ class OneListTile extends StatelessWidget {
     final theme = Theme.of(context);
 
     final textStyle = theme.textTheme.titleSmall ?? const TextStyle();
-    final onBackground = theme.colorScheme.onBackground;
+    final onBackground = theme.colorScheme.onSurface;
 
     return Material(
       color: color,
@@ -81,11 +81,14 @@ class OneListTile extends StatelessWidget {
                             ),
                             child: title!,
                           ),
-                        if (title != null && subtitle != null) VerticalSpacer.small,
+                        if (title != null && subtitle != null)
+                          VerticalSpacer.small,
                         if (subtitle != null)
                           DefaultTextStyle(
                             maxLines: multilineSubtitle ? null : 1,
-                            overflow: multilineSubtitle ? TextOverflow.clip : TextOverflow.ellipsis,
+                            overflow: multilineSubtitle
+                                ? TextOverflow.clip
+                                : TextOverflow.ellipsis,
                             style: textStyle
                                 .copyWith(
                                   height: multilineSubtitle ? null : 1,

@@ -34,7 +34,9 @@ class _ColorPickerDialogState extends State<ColorPickerDialog> {
             contentPadding: theme.spacing.base,
             enableAlpha: widget.enableAlpha,
             pickerAreaBorderRadius: theme.shape.borderRadius,
-            colorPickerWidth: mediaQuery.orientation == Orientation.portrait ? constraints.maxWidth : 200,
+            colorPickerWidth: mediaQuery.orientation == Orientation.portrait
+                ? constraints.maxWidth
+                : 200,
             onColorChanged: (color) {
               _color = color;
               widget.onColorChanged?.call(color);

@@ -33,7 +33,8 @@ class OneDialog extends StatelessWidget {
     if (title != null) {
       titleWidget = Center(
         child: Padding(
-          padding: titlePadding ?? (theme.spacing.edgeInsets * 2).copyWith(bottom: 0),
+          padding: titlePadding ??
+              (theme.spacing.edgeInsets * 2).copyWith(bottom: 0),
           child: DefaultTextStyle(
             style: theme.textTheme.titleLarge!,
             textAlign: TextAlign.center,

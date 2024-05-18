@@ -24,7 +24,8 @@ class OnePopupMenuButton<T> extends StatefulWidget {
 class _OnePopupMenuButtonState<T> extends State<OnePopupMenuButton<T>> {
   void _showButtonMenu() {
     final button = context.findRenderObject()! as RenderBox;
-    final overlay = Navigator.of(context).overlay!.context.findRenderObject()! as RenderBox;
+    final overlay =
+        Navigator.of(context).overlay!.context.findRenderObject()! as RenderBox;
 
     final position = RelativeRect.fromRect(
       Rect.fromPoints(
@@ -95,10 +96,12 @@ class OnePopupMenuListTile<T> extends PopupMenuEntry<T> {
   bool represents(T? value) => value == this.value;
 
   @override
-  State<OnePopupMenuListTile<T>> createState() => _OnePopupMenuListTileState<T, OnePopupMenuListTile<T>>();
+  State<OnePopupMenuListTile<T>> createState() =>
+      _OnePopupMenuListTileState<T, OnePopupMenuListTile<T>>();
 }
 
-class _OnePopupMenuListTileState<T, W extends OnePopupMenuListTile<T>> extends State<W> {
+class _OnePopupMenuListTileState<T, W extends OnePopupMenuListTile<T>>
+    extends State<W> {
   @override
   Widget build(BuildContext context) {
     return OneListTile(
@@ -106,7 +109,8 @@ class _OnePopupMenuListTileState<T, W extends OnePopupMenuListTile<T>> extends S
       title: widget.title,
       trailing: widget.trailing,
       borderRadius: BorderRadius.zero,
-      onTap: widget.enabled ? () => Navigator.of(context).pop(widget.value) : null,
+      onTap:
+          widget.enabled ? () => Navigator.of(context).pop(widget.value) : null,
     );
   }
 }
@@ -125,7 +129,8 @@ class OnePopupMenuRow<T> extends PopupMenuEntry<T> {
   bool represents(T? value) => false;
 
   @override
-  State<OnePopupMenuRow<T>> createState() => _OnePopupMenuRow<T, OnePopupMenuRow<T>>();
+  State<OnePopupMenuRow<T>> createState() =>
+      _OnePopupMenuRow<T, OnePopupMenuRow<T>>();
 }
 
 class _OnePopupMenuRow<T, W extends OnePopupMenuRow<T>> extends State<W> {
@@ -162,7 +167,8 @@ class OnePopupMenuIcon<T> extends PopupMenuEntry<T> {
   bool represents(T? value) => value == this.value;
 
   @override
-  State<OnePopupMenuIcon<T>> createState() => _OnePopupMenuIcon<T, OnePopupMenuIcon<T>>();
+  State<OnePopupMenuIcon<T>> createState() =>
+      _OnePopupMenuIcon<T, OnePopupMenuIcon<T>>();
 }
 
 class _OnePopupMenuIcon<T, W extends OnePopupMenuIcon<T>> extends State<W> {
@@ -170,7 +176,8 @@ class _OnePopupMenuIcon<T, W extends OnePopupMenuIcon<T>> extends State<W> {
   Widget build(BuildContext context) {
     return OneButton.transparent(
       icon: widget.icon,
-      onTap: widget.enabled ? () => Navigator.of(context).pop(widget.value) : null,
+      onTap:
+          widget.enabled ? () => Navigator.of(context).pop(widget.value) : null,
     );
   }
 }

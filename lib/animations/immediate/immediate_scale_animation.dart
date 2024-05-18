@@ -13,10 +13,12 @@ class ImmediateScaleAnimation extends ImmediateImplicitAnimation<double> {
   });
 
   @override
-  ImmediateImplictAnimationState<ImmediateImplicitAnimation<double>, double> createState() => _ImmediateScaleAnimationState();
+  ImmediateImplictAnimationState<ImmediateImplicitAnimation<double>, double>
+      createState() => _ImmediateScaleAnimationState();
 }
 
-class _ImmediateScaleAnimationState extends ImmediateImplictAnimationState<ImmediateScaleAnimation, double> {
+class _ImmediateScaleAnimationState
+    extends ImmediateImplictAnimationState<ImmediateScaleAnimation, double> {
   @override
   ImplicitlyAnimatedWidget buildAnimated(Widget child, double value) {
     return AnimatedScale(

@@ -14,10 +14,12 @@ class ImmediateSlideAnimation extends ImmediateImplicitAnimation<Offset> {
   });
 
   @override
-  ImmediateImplictAnimationState<ImmediateImplicitAnimation<Offset>, Offset> createState() => _ImmediateSlideAnimationState();
+  ImmediateImplictAnimationState<ImmediateImplicitAnimation<Offset>, Offset>
+      createState() => _ImmediateSlideAnimationState();
 }
 
-class _ImmediateSlideAnimationState extends ImmediateImplictAnimationState<ImmediateSlideAnimation, Offset> {
+class _ImmediateSlideAnimationState
+    extends ImmediateImplictAnimationState<ImmediateSlideAnimation, Offset> {
   @override
   ImplicitlyAnimatedWidget buildAnimated(Widget child, Offset value) {
     return AnimatedSlide(

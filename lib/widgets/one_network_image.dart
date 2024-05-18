@@ -23,10 +23,13 @@ class OneNetworkImage extends StatelessWidget {
   final double? _height;
   final double? _width;
   final Widget Function(BuildContext context, String url)? placeholder;
-  final Widget Function(BuildContext context, ImageProvider<Object> child)? imageBuilder;
-  final Widget Function(BuildContext context, String url, dynamic error)? errorWidget;
+  final Widget Function(BuildContext context, ImageProvider<Object> child)?
+      imageBuilder;
+  final Widget Function(BuildContext context, String url, dynamic error)?
+      errorWidget;
 
-  bool get _validURL => _imageUrl?.isEmpty ?? true ? false : Uri.parse(_imageUrl!).isAbsolute;
+  bool get _validURL =>
+      _imageUrl?.isEmpty ?? true ? false : Uri.parse(_imageUrl!).isAbsolute;
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +41,10 @@ class OneNetworkImage extends StatelessWidget {
       height: _height,
       width: _width,
       imageBuilder: imageBuilder,
-      placeholder: placeholder ?? (context, url) => OneShimmer(child: Container(color: Colors.white)),
-      errorWidget: errorWidget ?? (context, url, error) => const OneEmptyImage(),
+      placeholder: placeholder ??
+          (context, url) => OneShimmer(child: Container(color: Colors.white)),
+      errorWidget:
+          errorWidget ?? (context, url, error) => const OneEmptyImage(),
     );
   }
 }
@@ -51,17 +56,15 @@ class OneEmptyImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(
-            Icons.image_not_supported_outlined,
-            color: Colors.grey,
-          ),
-          Text('No Image', style: TextStyle(color: Colors.grey)),
-        ],
-      ),
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          Icons.image_not_supported_outlined,
+          color: Colors.grey,
+        ),
+        Text('No Image', style: TextStyle(color: Colors.grey)),
+      ],
     );
   }
 }

@@ -55,7 +55,8 @@ class OneRadioTile<T> extends StatelessWidget {
       enabled: onChanged != null,
       multilineTitle: true,
       contentPadding: contentPadding,
-      leadingPadding: leadingPadding ?? EdgeInsets.all(radioPadding.clamp(0, theme.spacing.base)),
+      leadingPadding: leadingPadding ??
+          EdgeInsets.all(radioPadding.clamp(0, theme.spacing.base)),
       trailingPadding: trailingPadding,
     );
   }

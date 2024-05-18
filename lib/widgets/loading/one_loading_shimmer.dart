@@ -39,14 +39,22 @@ class OneLoadingShimmer extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(width: double.infinity, height: 8, color: _color),
+                      Container(
+                        width: double.infinity,
+                        height: 8,
+                        color: _color,
+                      ),
                       const Padding(padding: EdgeInsets.symmetric(vertical: 2)),
-                      Container(width: double.infinity, height: 8, color: _color),
+                      Container(
+                        width: double.infinity,
+                        height: 8,
+                        color: _color,
+                      ),
                       const Padding(padding: EdgeInsets.symmetric(vertical: 2)),
                       Container(width: 40, height: 8, color: _color),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

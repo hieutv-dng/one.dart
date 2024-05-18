@@ -66,7 +66,8 @@ class _PopupMenu<T> extends StatelessWidget {
 
       Widget item = route.items[i];
 
-      if (route.initialValue != null && route.items[i].represents(route.initialValue)) {
+      if (route.initialValue != null &&
+          route.items[i].represents(route.initialValue)) {
         item = ColoredBox(
           color: Theme.of(context).highlightColor,
           child: item,
@@ -192,12 +193,14 @@ class _PopupMenuRouteLayout extends SingleChildLayoutDelegate {
 
     if (x < _kMenuScreenPadding + padding.left) {
       x = _kMenuScreenPadding + padding.left;
-    } else if (x + childSize.width > size.width - _kMenuScreenPadding - padding.right) {
+    } else if (x + childSize.width >
+        size.width - _kMenuScreenPadding - padding.right) {
       x = size.width - childSize.width - _kMenuScreenPadding - padding.right;
     }
     if (y < _kMenuScreenPadding + padding.top) {
       y = _kMenuScreenPadding + padding.top;
-    } else if (y + childSize.height > size.height - _kMenuScreenPadding - padding.bottom) {
+    } else if (y + childSize.height >
+        size.height - _kMenuScreenPadding - padding.bottom) {
       y = size.height - padding.bottom - _kMenuScreenPadding - childSize.height;
     }
 
@@ -269,7 +272,9 @@ class _PopupMenuRoute<T> extends PopupRoute<T> {
     int? selectedItemIndex;
 
     if (initialValue != null) {
-      for (var index = 0; selectedItemIndex == null && index < items.length; index += 1) {
+      for (var index = 0;
+          selectedItemIndex == null && index < items.length;
+          index += 1) {
         if (items[index].represents(initialValue)) selectedItemIndex = index;
       }
     }
@@ -327,7 +332,8 @@ class _RenderMenuItem extends RenderShiftedBox {
   ValueChanged<Size> onLayout;
 
   @override
-  Size computeDryLayout(BoxConstraints constraints) => child == null ? Size.zero : child!.getDryLayout(constraints);
+  Size computeDryLayout(BoxConstraints constraints) =>
+      child == null ? Size.zero : child!.getDryLayout(constraints);
 
   @override
   void performLayout() {

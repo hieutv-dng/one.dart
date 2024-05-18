@@ -29,7 +29,8 @@ class OneAppBar extends StatelessWidget {
       width: double.infinity,
       decoration: backgroundDecoration,
       constraints: BoxConstraints.tightFor(
-        height: mediaQuery.padding.top + theme.spacing.base * 2 + style.fontSize!,
+        height:
+            mediaQuery.padding.top + theme.spacing.base * 2 + style.fontSize!,
       ),
       child: Material(
         type: MaterialType.transparency,
@@ -89,7 +90,8 @@ class OneSliverAppBar extends StatelessWidget {
         title: title,
         leading: leading,
         actions: actions,
-        backgroundDecoration: backgroundDecoration ?? BoxDecoration(color: theme.colorScheme.background.withOpacity(.8)),
+        backgroundDecoration: backgroundDecoration ??
+            BoxDecoration(color: theme.colorScheme.surface.withOpacity(.8)),
         topPadding: mediaQuery.padding.top,
         paddingValue: theme.spacing.base,
         titleStyle: style,

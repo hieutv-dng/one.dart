@@ -39,10 +39,7 @@ class _ExpansionCardState extends State<ExpansionCard> {
                 Expanded(
                   child: Padding(
                     padding: theme.spacing.edgeInsets,
-                    child: DefaultTextStyle(
-                      style: theme.textTheme.subtitle2!,
-                      child: widget.title,
-                    ),
+                    child: widget.title,
                   ),
                 ),
                 OneButton.transparent(
@@ -66,7 +63,9 @@ class _ExpansionCardState extends State<ExpansionCard> {
             firstCurve: Curves.easeOut,
             secondCurve: Curves.easeOut,
             sizeCurve: Curves.easeOutCubic,
-            crossFadeState: _collapsed ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+            crossFadeState: _collapsed
+                ? CrossFadeState.showSecond
+                : CrossFadeState.showFirst,
             firstChild: AnimatedScale(
               duration: theme.animation.short,
               scale: _collapsed ? .95 : 1,

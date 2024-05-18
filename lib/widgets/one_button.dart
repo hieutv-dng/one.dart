@@ -81,7 +81,7 @@ class _OneTextButton extends OneButton {
 
     return TextButton(
       style: theme.textButtonTheme.style?.copyWith(
-        padding: MaterialStateProperty.all(padding),
+        padding: WidgetStateProperty.all(padding),
       ),
       onPressed: onTap,
       onLongPress: onLongPress,
@@ -122,7 +122,8 @@ class _OneElevatedButton extends OneButton {
 
     return ElevatedButton(
       style: theme.textButtonTheme.style?.copyWith(
-        padding: MaterialStateProperty.all(padding ?? theme.spacing.smallEdgeInsets),
+        padding:
+            WidgetStateProperty.all(padding ?? theme.spacing.smallEdgeInsets),
       ),
       onPressed: onTap,
       onLongPress: onLongPress,
@@ -163,7 +164,8 @@ class _OneOutlinedButton extends OneButton {
 
     return OutlinedButton(
       style: theme.textButtonTheme.style?.copyWith(
-        padding: MaterialStateProperty.all(padding ?? theme.spacing.smallEdgeInsets),
+        padding:
+            WidgetStateProperty.all(padding ?? theme.spacing.smallEdgeInsets),
       ),
       onPressed: onTap,
       onLongPress: onLongPress,
@@ -203,15 +205,15 @@ class _OneTransparentButton extends OneButton {
     final theme = Theme.of(context);
 
     final style = ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(Colors.transparent),
-      foregroundColor: MaterialStateProperty.resolveWith(
-        (states) => states.contains(MaterialState.disabled)
-            ? theme.colorScheme.onBackground.withOpacity(.5)
-            : theme.colorScheme.onBackground,
+      backgroundColor: WidgetStateProperty.all(Colors.transparent),
+      foregroundColor: WidgetStateProperty.resolveWith(
+        (states) => states.contains(WidgetState.disabled)
+            ? theme.colorScheme.onSurface.withOpacity(.5)
+            : theme.colorScheme.onSurface,
       ),
-      overlayColor: MaterialStateProperty.all(theme.highlightColor),
-      elevation: MaterialStateProperty.all(0),
-      padding: MaterialStateProperty.all(
+      overlayColor: WidgetStateProperty.all(theme.highlightColor),
+      elevation: WidgetStateProperty.all(0),
+      padding: WidgetStateProperty.all(
         padding ?? theme.spacing.smallEdgeInsets,
       ),
     );
@@ -260,18 +262,22 @@ class _OneCardButton extends OneButton {
     final theme = Theme.of(context);
 
     final background = backgroundColor ?? theme.cardTheme.color!;
-    final foreground = foregroundColor ?? theme.colorScheme.onBackground;
+    final foreground = foregroundColor ?? theme.colorScheme.onSurface;
 
     final style = ButtonStyle(
-      backgroundColor: MaterialStateProperty.resolveWith(
-        (states) => states.contains(MaterialState.disabled) ? background.withOpacity(0) : background,
+      backgroundColor: WidgetStateProperty.resolveWith(
+        (states) => states.contains(WidgetState.disabled)
+            ? background.withOpacity(0)
+            : background,
       ),
-      foregroundColor: MaterialStateProperty.resolveWith(
-        (states) => states.contains(MaterialState.disabled) ? foreground.withOpacity(.5) : foreground,
+      foregroundColor: WidgetStateProperty.resolveWith(
+        (states) => states.contains(WidgetState.disabled)
+            ? foreground.withOpacity(.5)
+            : foreground,
       ),
-      overlayColor: MaterialStateProperty.all(theme.highlightColor),
-      elevation: MaterialStateProperty.all(theme.cardTheme.elevation),
-      padding: MaterialStateProperty.all(
+      overlayColor: WidgetStateProperty.all(theme.highlightColor),
+      elevation: WidgetStateProperty.all(theme.cardTheme.elevation),
+      padding: WidgetStateProperty.all(
         padding ?? theme.spacing.smallEdgeInsets,
       ),
     );

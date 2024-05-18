@@ -51,7 +51,7 @@ class OneRadioDialogTile<T> extends StatelessWidget {
                     Navigator.of(context).pop();
                     if (value != groupValue) onChanged?.call(value);
                   },
-                )
+                ),
             ],
           ),
         ),

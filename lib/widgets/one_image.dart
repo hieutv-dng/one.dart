@@ -83,7 +83,10 @@ class OneImage extends StatelessWidget {
       child: Image(
         // fallback to NetworkImage in tests because we can't use mocked http
         // overrides for `NetworkImageWithRetry`
-        image: imageProvider ?? (isTest ? NetworkImage(imageUrl!) : NetworkImageWithRetry(imageUrl!)) as ImageProvider,
+        image: imageProvider ??
+            (isTest
+                ? NetworkImage(imageUrl!)
+                : NetworkImageWithRetry(imageUrl!)) as ImageProvider,
         errorBuilder: errorBuilder,
         frameBuilder: _frameBuilder,
         alignment: alignment,
