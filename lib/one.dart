@@ -23,8 +23,6 @@ export 'theme/spacing_theme.dart';
 export 'widgets/bottom_sheet/bottom_sheet_handle.dart';
 export 'widgets/bottom_sheet/bottom_sheet_header.dart';
 export 'widgets/bottom_sheet/one_bottom_sheet.dart';
-export 'widgets/color_picker/color_picker.dart';
-export 'widgets/color_picker/color_picker_dialog.dart';
 export 'widgets/expansion_card.dart';
 export 'widgets/loading/one_loading_shimmer.dart';
 export 'widgets/loading/one_shimmer.dart';
